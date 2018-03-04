@@ -13,16 +13,30 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    {
+                        loader:'css-loader',
+                        options:{
+                            alias:{
+                                './Assets': path.resolve(__dirname, 'assets/')
+                            }
+                        }
+                    }
                 ]
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'file-loader'
+                    {
+                        loader:'file-loader'
+                    }
                 ]
             }
         ]
+    },
+    resolve:{
+        alias: {
+            Assets: path.resolve(__dirname, 'assets/')
+        }
     },
     plugins: [
         // new CleanWebpackPlugin(['dist'])

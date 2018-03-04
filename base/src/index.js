@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import './style.css';
-import Icon from './img.png';
+import Icon from 'Assets/img.png';
 
 // const _ = require('lodash');
 function component(){
