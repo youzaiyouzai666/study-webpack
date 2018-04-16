@@ -24,4 +24,22 @@ module.exports = {
         publicPath: '/'
     }
 
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [  //数组对象，可以是字符串|对象（一般对象是有配置信息的）
+                    'style-loader',
+                    {
+                        loader: "css-loader",
+                        options: {
+                            root: '.' //参数
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
+
 };
